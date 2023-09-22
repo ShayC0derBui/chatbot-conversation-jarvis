@@ -41,29 +41,29 @@ def get_chat_response(message_input):
   messages = get_recent_messages()
   print(messages)
   try:
-    # global chatStr
-    # chatStr = f"You: {message_input}\n SanjeevaniBot:"
-    # print(chatStr)
-    # response = openai.Completion.create(
-    #     model="text-davinci-003",
-    #     prompt=chatStr,
-    #     temperature=0.7,
-    #     max_tokens=256,
-    #     top_p=1,
-    #     frequency_penalty=0,
-    #     presence_penalty=0
-    # )
-    # message_text = response["choices"][0]["text"]
+    global chatStr
+    chatStr = f"You: {message_input}\n SanjeevaniBot:"
+    print(chatStr)
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=chatStr,
+        temperature=0.7,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    message_text = response["choices"][0]["text"]
 
 
     #use one of them
-    
+
     # response = openai.ChatCompletion.create(
     #   model="gpt-3.5-turbo",
     #   messages=messages
     # )
     # message_text = response["choices"][0]["message"]["content"]
-    return message_input
+    return message_text
   except Exception as e:
     print(e)
     return

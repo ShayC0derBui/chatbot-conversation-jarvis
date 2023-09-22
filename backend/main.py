@@ -20,7 +20,7 @@ from functions.database import store_messages, reset_messages
 
 
 # Get Environment Vars
-openai.organization = config("OPEN_AI_ORG")
+# openai.organization = config("OPEN_AI_ORG")
 openai.api_key = config("OPEN_AI_KEY")
 
 
